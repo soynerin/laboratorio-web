@@ -1,6 +1,5 @@
 ﻿using Services;
 using System;
-using System.IO;
 
 namespace LaboratorioWeb
 {
@@ -14,8 +13,7 @@ namespace LaboratorioWeb
             {
                 if (expires < DateTime.Now)
                 {
-                    // Link has expired
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('expiró el link');", true);
+                    ClientScript.RegisterStartupScript(GetType(), "myalert", "alert('expiró el link');", true);
                     Response.Redirect("https://localhost:44385/PromotoresA.aspx");
                 }
                 else
@@ -25,8 +23,7 @@ namespace LaboratorioWeb
             }
             else
             {
-                // Invalid link
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('link inválido');", true);
+                ClientScript.RegisterStartupScript(GetType(), "myalert", "alert('link inválido');", true);
                 Response.Redirect("https://localhost:44385/PromotoresA.aspx");
             }
         }

@@ -2,11 +2,16 @@
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Web;
 
 namespace Services
 {
-    public class Helper
+    public static class Helper
     {
+        public static string Host { get; set; } = HttpContext.Current.Request.Url.Host;
+        
+        public static int Port { get; set; } = HttpContext.Current.Request.Url.Port;
+
         public static string MakeExpiryHash(DateTime expiry)
         {
             const double randomNumber = Math.PI * TimeSpan.TicksPerMillisecond;

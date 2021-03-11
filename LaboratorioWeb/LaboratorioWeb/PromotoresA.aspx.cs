@@ -13,7 +13,7 @@ namespace LaboratorioWeb
         {
             var expires = DateTime.Now + TimeSpan.FromMinutes(1);
             var hash = Helper.MakeExpiryHash(expires);
-            var link = $"https://localhost:44385/PromotoresB.aspx?exp={expires:s}&k={hash}";
+            var link = $"https://{Helper.Host}:{Helper.Port}/PromotoresB.aspx?exp={expires:s}&k={hash}";
 
             Response.Redirect(link);
         }
