@@ -12,8 +12,8 @@ namespace TestingFormExpiredTime
         protected void OnClick(object sender, EventArgs e)
         {
             var expires = DateTime.Now + TimeSpan.FromMinutes(1);
-            var hash = Helper.MakeExpiryHash(expires);
-            var link = $"https://{Helper.Host}:{Helper.Port}/PromotoresB.aspx?exp={expires:s}&k={hash}";
+            var hash = HashServices.MakeExpiryHash(expires);
+            var link = $"https://{Configuration.Host}:{Configuration.Port}/PromotoresB.aspx?exp={expires:s}&k={hash}";
 
             Response.Redirect(link);
         }

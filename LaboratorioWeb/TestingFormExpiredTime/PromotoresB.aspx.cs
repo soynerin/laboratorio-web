@@ -1,5 +1,5 @@
-﻿using System;
-using Services;
+﻿using Services;
+using System;
 
 namespace TestingFormExpiredTime
 {
@@ -7,14 +7,15 @@ namespace TestingFormExpiredTime
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DateTime expires = DateTime.Parse(Request.Params["exp"]);
-            string hash = Helper.MakeExpiryHash(expires);
+            var expires = DateTime.Parse(Request.Params["exp"]);
+            var hash = HashServices.MakeExpiryHash(expires);
+
             if (Request.Params["k"] == hash)
             {
                 if (expires < DateTime.Now)
                 {
-                    ClientScript.RegisterStartupScript(GetType(), "myalert", "alert('expiró el link');", true);
-                    Response.Redirect("https://localhost:44385/PromotoresA.aspx");
+                    ClientScript.RegisterStartupScript(GetType(), "expiredalert", "alert('expiró el link');", true);
+                    Response.Redirect($"https://{Configuration.Host}:{Configuration.Port}/PromotoresA.aspx");
                 }
                 else
                 {
@@ -23,8 +24,8 @@ namespace TestingFormExpiredTime
             }
             else
             {
-                ClientScript.RegisterStartupScript(GetType(), "myalert", "alert('link inválido');", true);
-                Response.Redirect("https://localhost:44385/PromotoresA.aspx");
+                ClientScript.RegisterStartupScript(GetType(), "invalidAlert", "alert('link inválido');", true);
+                Response.Redirect($"https://{Configuration.Host}:{Configuration.Port}/PromotoresA.aspx");
             }
         }
     }
