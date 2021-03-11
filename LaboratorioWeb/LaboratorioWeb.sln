@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaboratorioWeb", "LaboratorioWeb\LaboratorioWeb.csproj", "{9A650EC6-6605-472A-9A51-111A2B611762}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingFormExpiredTime", "LaboratorioWeb\TestingFormExpiredTime.csproj", "{9A650EC6-6605-472A-9A51-111A2B611762}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{B30C0B35-92DC-442F-93A6-1999D21C4E3E}"
 EndProject

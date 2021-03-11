@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PromotoresA.aspx.cs" Inherits="LaboratorioWeb.PromotoresA" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PromotoresA.aspx.cs" Inherits="TestingFormExpiredTime.PromotoresA" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Testing Form Expired Time</title>
 </head>
 <body>
     <form id="form1" runat="server">

@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace LaboratorioWeb
+namespace TestingFormExpiredTime
 {
     public partial class PromotoresB
     {
