@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Services
@@ -12,7 +13,7 @@ namespace Services
             const double randomNumber = Math.PI * TimeSpan.TicksPerMillisecond;
             var bytes = Encoding.UTF8.GetBytes(randomNumber.ToString(CultureInfo.InvariantCulture) + expiry.ToString("s"));
 
-            using (var sha = System.Security.Cryptography.SHA1.Create())
+            using (var sha = SHA256.Create())
             {
                 return string.Concat(sha.ComputeHash(bytes).Select(b => b.ToString("x2"))).Substring(8);
             }

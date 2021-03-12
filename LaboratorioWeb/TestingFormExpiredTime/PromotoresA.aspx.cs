@@ -7,15 +7,16 @@ namespace TestingFormExpiredTime
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ShareLink.DataBind();
         }
 
-        protected void OnClick(object sender, EventArgs e)
+        protected void ShareLink_DataBinding(object sender, EventArgs e)
         {
             var expires = DateTime.Now + TimeSpan.FromMinutes(1);
             var hash = HashServices.MakeExpiryHash(expires);
-            var link = $"https://{Configuration.Host}:{Configuration.Port}/PromotoresB.aspx?exp={expires:s}&k={hash}";
+            var link =  $"https://{Configuration.Host}:{Configuration.Port}/PromotoresB.aspx?exp={expires:s}&k={hash}";
 
-            Response.Redirect(link);
+            ShareLink.NavigateUrl = ResolveUrl(link);
         }
     }
 }

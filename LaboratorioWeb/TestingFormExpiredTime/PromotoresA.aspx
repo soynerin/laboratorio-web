@@ -7,10 +7,11 @@
     <title>Testing Form Expired Time</title>
 </head>
 <body>
+
     <form id="form1" runat="server">
         <div>
             <h1>PROMOTORES A</h1>
-            <asp:LinkButton runat="server" Text="REDIRECCIONAR A PROMOTRES B" OnClick="OnClick"></asp:LinkButton>
+            <asp:HyperLink runat="server" ID="ShareLink" OnDataBinding ="ShareLink_DataBinding" Text="COMPARTIR LINK"></asp:HyperLink>
         </div>
     </form>
 </body>

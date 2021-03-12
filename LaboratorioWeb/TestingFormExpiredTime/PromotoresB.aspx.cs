@@ -15,7 +15,7 @@ namespace TestingFormExpiredTime
                 if (expires < DateTime.Now)
                 {
                     ClientScript.RegisterStartupScript(GetType(), "expiredalert", "alert('expiró el link');", true);
-                    Response.Redirect($"https://{Configuration.Host}:{Configuration.Port}/PromotoresA.aspx");
+                    //Response.Redirect($"https://{Configuration.Host}:{Configuration.Port}/PromotoresA.aspx");
                 }
                 else
                 {
@@ -25,7 +25,7 @@ namespace TestingFormExpiredTime
             else
             {
                 ClientScript.RegisterStartupScript(GetType(), "invalidAlert", "alert('link inválido');", true);
-                Response.Redirect($"https://{Configuration.Host}:{Configuration.Port}/PromotoresA.aspx");
+                //Response.Redirect($"https://{Configuration.Host}:{Configuration.Port}/PromotoresA.aspx");
             }
         }
     }
